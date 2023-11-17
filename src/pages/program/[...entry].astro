@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
 import SubscribeButton from "@/components/SubscribeButton";
 import DetailsButton from "@/components/DetailsButton";
+import { getFormattedDate } from "../../utils/date.ts";
 
 export async function getStaticPaths() {
   const programEntries = await getCollection("program");
@@ -25,7 +26,9 @@ const meta = {
   <h1 class="program-details-speaker">{entry.data.speaker}</h1>
   <h2 class="program-details-title">{entry.data.title}</h2>
   <div class="program-date-time">
-    <span class="program-date">{entry.data.date}</span>
+    <span class="program-date">
+      {getFormattedDate(entry.data.date)}
+    </span>
     <div class="program-sep" />
     <span class="program-time">{entry.data.time}</span>
   </div>
@@ -34,6 +37,11 @@ const meta = {
     <div class="program-sep" />
     <span class="program-type">{entry.data.type}</span>
   </div>
-  <p class="program-description py-8">{entry.data.description}</p>
+  <p class="program-description py-8">
+    {entry.data.description}
+  </p>
+  <div id="program-information" class="pb-4">
+    <Content />
+  </div>
   <SubscribeButton />
 </PageLayout>

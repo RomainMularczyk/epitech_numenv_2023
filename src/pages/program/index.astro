@@ -6,18 +6,13 @@ import aboutImg from "@/assets/about-astro.png";
 import Program from "@/components/program/Program";
 
 const meta = {
-	title: "About",
-	description: "I'm a starter theme for Astro.build",
+	title: "Programme",
+	description: "Détail du programme",
 };
 ---
 
-<PageLayout meta={meta}>
+<PageLayout {meta} >
 	<div class="space-y-6">
-		<h1 class="title">Programme</h1>
-		<p>
-      Le cycle de conférences et d'ateliers se déroulera du 1er
-      février au 30 juin 2024 à Epitech Lyon.
-		</p>
     <Program />
 	</div>
 </PageLayout>
