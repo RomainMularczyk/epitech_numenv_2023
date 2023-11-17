@@ -13,6 +13,7 @@ export type SiteConfig = {
 		link: string;
 		pingback?: string;
 	};
+  proxyPath: string;
 };
 
 export type PaginationLink = {
