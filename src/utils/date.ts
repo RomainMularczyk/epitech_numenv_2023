@@ -1,5 +1,4 @@
 import { siteConfig } from '@/site-config';
-import dayjs from 'dayjs';
 
 const dateFormat = new Intl.DateTimeFormat(siteConfig.date.locale, siteConfig.date.options);
 
