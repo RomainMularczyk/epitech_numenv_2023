@@ -8,7 +8,8 @@
     py-2 px-1
     font-semibold text-base
     self-center
-    dark:text-green dark:border-green;
+    dark:text-green dark:border-green
+    hover-btn;
 	}
 
   .details-btn {
@@ -16,7 +17,13 @@
     py-2 px-1
     font-semibold text-base
     self-center
-    dark:text-green dark:border-green;
+    dark:text-green dark:border-green
+    hover-btn;
+  }
+
+  .hover-btn {
+    @apply hover:dark:bg-green hover:dark:text-black
+    hover:bg-blue hover:text-white;
   }
 
   .program-entry {
@@ -26,18 +33,20 @@
 
   .program-date-time {
     @apply text-blue pt-2
-    flex flex-row justify-center gap-3
+    flex flex-row justify-start gap-5
+    font-semibold
     dark:text-green;
   }
 
   .program-place-type {
     @apply text-blue
-    flex flex-row justify-center gap-3
+    flex flex-row justify-start gap-5
+    font-semibold
     dark:text-green;
   }
 
   .program-speaker {
-    @apply text-xl;
+    @apply text-xl font-semibold;
   }
 
   .program-title {
@@ -52,5 +61,11 @@
   .program-sep {
     @apply border-blue border-dashed border
     dark:border-green;
+  }
+
+  .program-sep-section {
+    @apply program-sep
+    mt-10 mx-16
+    border-black dark:border-white;
   }
 }
