@@ -1,0 +1,21 @@
+---
+import ProgramEntry from "@/components/program/ProgramEntry";
+
+const programEntries = await Astro.glob("../../content/program/*.md");
+---
+
+<ul>
+  {
+    programEntries.map(programEntry => (
+      <ProgramEntry
+        title={programEntry.frontmatter.title}
+        speaker={programEntry.frontmatter.speaker}
+        date={programEntry.frontmatter.date}
+        time={programEntry.frontmatter.time}
+        type={programEntry.frontmatter.type}
+        place={programEntry.frontmatter.place}
+        description={programEntry.frontmatter.description}
+      />
+    ))
+  }
+</ul>

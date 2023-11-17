@@ -1,0 +1,35 @@
+---
+import SubscribeButton from "@/components/SubscribeButton";
+import DetailsButton from "@/components/DetailsButton";
+
+const {
+  speaker,
+  title,
+  date,
+  time,
+  type,
+  place,
+  description } = Astro.props;
+
+const slug = speaker.replace(" ", "-").toLowerCase();
+---
+
+<li class="program-entry">
+  <span class="program-speaker">{speaker}</span>
+  <span class="program-title">{title}</span>
+  <div class="program-date-time">
+    <span class="program-date">{date}</span>
+    <div class="program-sep"/>
+    <span class="program-time text-red">{time}</span>
+  </div>
+  <div class="program-place-type">
+    <span class="program-place">{place}</span>
+    <div class="program-sep" />
+    <span class="program-type">{type}</span>
+  </div>
+  <p class="program-description">{description}</p>
+  <div class="flex flex-row gap-2">
+    <SubscribeButton />
+    <DetailsButton link={"/program/" + slug} />
+  </div>
+</li>
