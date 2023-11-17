@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.subscribe-btn {
+		@apply border-2 border-dashed border-blue text-blue
+    py-2 px-1
+    font-semibold text-base
+    self-center
+    dark:text-green dark:border-green;
+	}
+
+  .details-btn {
+    @apply border-2 border-dashed border-blue text-blue
+    py-2 px-1
+    font-semibold text-base
+    self-center
+    dark:text-green dark:border-green;
+  }
+
+  .program-entry {
+    @apply flex flex-col justify-center
+    pt-8;
+  }
+
+  .program-date-time {
+    @apply text-blue pt-2
+    flex flex-row justify-center gap-3
+    dark:text-green;
+  }
+
+  .program-place-type {
+    @apply text-blue
+    flex flex-row justify-center gap-3
+    dark:text-green;
+  }
+
+  .program-speaker {
+    @apply text-xl;
+  }
+
+  .program-title {
+    @apply text-xl;
+  }
+
+  .program-description {
+    @apply py-2
+    self-center;
+  }
+
+  .program-sep {
+    @apply border-blue border-dashed border
+    dark:border-green;
+  }
+}

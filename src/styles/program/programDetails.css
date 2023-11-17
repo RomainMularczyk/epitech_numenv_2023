@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .program-details-speaker {
+    @apply text-2xl;
+  }
+
+  .program-details-title {
+    @apply text-xl;
+  }
+}

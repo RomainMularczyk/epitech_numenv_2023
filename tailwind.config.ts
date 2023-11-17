@@ -21,11 +21,15 @@ export default {
 		extend: {
 			colors: {
 				bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
-				textColor: "hsl(var(--theme-text) / <alpha-value>)",
+				textColor: "var(--theme-text)",
 				link: "hsl(var(--theme-link) / <alpha-value>)",
 				accent: "hsl(var(--theme-accent) / <alpha-value>)",
 				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
 				quote: "hsl(var(--theme-quote) / <alpha-value>)",
+        black: "#363636",
+        white: "#F3F2F2",
+        blue: "#0766AD",
+        green: "#C5E898",
 			},
 			fontFamily: {
 				// Add any custom fonts here

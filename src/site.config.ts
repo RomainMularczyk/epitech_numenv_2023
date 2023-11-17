@@ -34,11 +34,15 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/",
 	},
 	{
-		title: "About",
-		path: "/about/",
+		title: "Programme",
+		path: "/program/",
 	},
 	{
-		title: "Blog",
-		path: "/posts/",
+		title: "Ressources",
+		path: "/resources/",
 	},
+  {
+    title: "Introspection",
+    path: "/introspect/",
+  }
 ];

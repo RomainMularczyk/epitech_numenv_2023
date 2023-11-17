@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import SubscribeButton from "@/components/SubscribeButton";
+import DetailsButton from "@/components/DetailsButton";
+
+export async function getStaticPaths() {
+  const programEntries = await getCollection("program");
+
+  return programEntries.map(entry => ({
+    params: { entry: entry.slug }, props: { entry }}
+  ));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const meta = {
+  title: entry.data.title,
+  description: entry.data.description,
+}
+---
+<PageLayout meta={meta}>
+  <h1 class="program-details-speaker">{entry.data.speaker}</h1>
+  <h2 class="program-details-title">{entry.data.title}</h2>
+  <div class="program-date-time">
+    <span class="program-date">{entry.data.date}</span>
+    <div class="program-sep" />
+    <span class="program-time">{entry.data.time}</span>
+  </div>
+  <div class="program-place-type">
+    <span class="program-place">{entry.data.place}</span>
+    <div class="program-sep" />
+    <span class="program-type">{entry.data.type}</span>
+  </div>
+  <p class="program-description py-8">{entry.data.description}</p>
+  <SubscribeButton />
+</PageLayout>
