@@ -31,14 +31,14 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: "Programme",
-		path: "/program/",
+		path: "program/",
 	},
 	{
 		title: "Ressources",
-		path: "/resources/",
+		path: "resources/",
 	},
   {
     title: "Introspection",
-    path: "/introspect/",
+    path: "introspect/",
   }
 ];
