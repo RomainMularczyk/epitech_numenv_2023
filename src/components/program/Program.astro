@@ -1,7 +1,9 @@
 ---
 import ProgramEntry from "@/components/program/ProgramEntry";
 
-const programEntries = await Astro.glob("../../content/program/*.md");
+const programEntries = await Astro.glob(
+  "../../content/program/*.md"
+);
 ---
 
 <ul>

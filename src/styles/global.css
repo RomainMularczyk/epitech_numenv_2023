@@ -1,5 +1,6 @@
 @import "./program/program.css";
 @import "./program/programDetails.css";
+@import "./menu/headerMenu.css";
 
 @tailwind base;
 @tailwind components;
