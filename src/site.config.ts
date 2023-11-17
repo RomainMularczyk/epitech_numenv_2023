@@ -25,20 +25,21 @@ export const siteConfig: SiteConfig = {
 	webmentions: {
 		link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
 	},
+  proxyPath: "/epitech_numenv_2023/"
 };
 
 // Used to generate links in both the Header & Footer.
 export const menuLinks: Array<{ title: string; path: string }> = [
 	{
 		title: "Programme",
-		path: "program/",
+		path: `${siteConfig.proxyPath}/program/`,
 	},
 	{
 		title: "Ressources",
-		path: "resources/",
+		path: `${siteConfig.proxyPath}/resources/`,
 	},
   {
     title: "Introspection",
-    path: "introspect/",
+    path: `${siteConfig.proxyPath}/introspect/`,
   }
 ];
