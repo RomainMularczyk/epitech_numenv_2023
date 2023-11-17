@@ -26,7 +26,7 @@ export const siteConfig: SiteConfig = {
 		link: "https://webmention.io/astro-cactus.chriswilliams.dev/webmention",
 	},
   // Leave it blank if no reverse proxy is needed on route
-  proxyPath: "/epitech_envnum_2023"
+  proxyPath: "/epitech_numenv_2023"
 };
 
 // Used to generate links in both the Header & Footer.
