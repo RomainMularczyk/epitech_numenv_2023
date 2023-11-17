@@ -1,6 +1,7 @@
 ---
 import SubscribeButton from "@/components/SubscribeButton";
 import DetailsButton from "@/components/DetailsButton";
+import { getFormattedDate } from "../../utils/date.ts";
 
 const {
   speaker,
@@ -18,7 +19,9 @@ const slug = speaker.replace(" ", "-").toLowerCase();
   <span class="program-speaker">{speaker}</span>
   <span class="program-title">{title}</span>
   <div class="program-date-time">
-    <span class="program-date">{date}</span>
+    <span class="program-date">
+      {getFormattedDate(date)}
+    </span>
     <div class="program-sep"/>
     <span class="program-time text-red">{time}</span>
   </div>
@@ -32,4 +35,5 @@ const slug = speaker.replace(" ", "-").toLowerCase();
     <SubscribeButton />
     <DetailsButton link={"/program/" + slug} />
   </div>
+  <div class="program-sep-section" />
 </li>
