@@ -32,7 +32,7 @@ const slug = speaker.replace(" ", "-").toLowerCase();
   </div>
   <p class="program-description">{description}</p>
   <div class="flex flex-row gap-2">
-    <SubscribeButton />
+    <SubscribeButton link={"/subscribe/" + slug} />
     <DetailsButton link={Astro.url.pathname + slug} />
   </div>
   <div class="program-sep-section" />
