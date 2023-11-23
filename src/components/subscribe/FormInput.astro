@@ -1,9 +1,9 @@
 ---
-const { divId, id, label, name, error, style, required} = Astro.props;
+const { divId, id, label, name, error, style, required, type} = Astro.props;
 ---
 
 <div class="mb-4" style={style} id={divId}>
   <label for={name} class="subscribe-label">{label}</label>
-  <input type="text" name={name} class="subscribe-input" id={id} required={required}>
+  <input type={type || "text"} name={name} class="subscribe-input" id={id} required={required}>
   {error && <p class="subscribe-error">{error}</p>}
 </div>

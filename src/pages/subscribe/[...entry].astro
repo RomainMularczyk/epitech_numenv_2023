@@ -181,7 +181,7 @@ const epitechFormations: Array<{
   <form id="form" method="POST" class="subscribe-form">
     <Input required label="Nom" name="lastname" error={errors.lastname}/>
     <Input required label="Prénom" name="firstname" error={errors.firstname}/>
-    <Input required label="Email" name="email" error={errors.email}/>
+    <Input required label="Email" type="email" name="email" error={errors.email}/>
     <Select
       required
       label="École ou Institution"
