@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base";
-import SubscribeButton from "@/components/SubscribeButton";
 import Input from "@/components/subscribe/FormInput"
 import Select from "@/components/subscribe/FormSelect"
 export const prerender = true;
@@ -14,75 +13,51 @@ export async function getStaticPaths() {
     ));
 }
 
-function isValidEmail(email: string) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(email);
-}
-
 const { entry } = Astro.props;
 const meta = {
   title: entry.data.title,
   description: entry.data.description,
 }
-const errors = {
-  firstname: "",
-  lastname: "",
-  email: "",
-  institution: "",
-  formation: "",
-  other: ""
-};
+  export const POST: APIRoute = (request) => {
+    console.log("request", request)
 
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const lastname = data.get("lastname");
-    const firstname = data.get("firstname");
-    const email = data.get("email");
-    const institution = data.get("institution");
-    const formation = data.get("formation");
-    const other = data.get("other");
-    
-    if (typeof lastname !== "string" || lastname.length < 1) {
-      errors.lastname += "Renseignez votre nom";
-    }
-    
-    if (typeof firstname !== "string" || firstname.length < 1) {
-      errors.firstname += "Renseignez votre prénom";
-    }
-    
-    if (typeof email !== "string" || !isValidEmail(email)) {
-      errors.email += "Email non valide";
-    } else if (email.length <1) {
-      errors.email += "Renseignez votre email";
-    }
-    
-    if (institution.length < 1) {
-      errors.institution += "Renseignez votre institution";
-    }
-    
-    if (institution === "epitech" && formation.length < 1 ) {
-      errors.formation += "Renseignez votre formation Epitech";
-    }
-       
-    if (institution === "other" && other.length < 1 ) {
-      errors.other += "Veuillez renseigner votre école ou institution";
-    }
-   
-    const hasErrors = Object.values(errors).some(msg => msg)
-    if (!hasErrors) {
-      const body = {
-        firstname,
+    const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Access-Control-Allow-Origin', '*');
+  
+  
+      return fetch(`localhost:1323/subscribe/${meta.title}`, {
+          method: 'POST',
+          headers: myHeaders,
+          credentials: 'include',
+          body: JSON.stringify(request),
+          redirect: 'follow',
+      });
+  
+  }
+  
+  if (Astro.request.method === "POST") {
+    console.log("on envoie les données au back")
+    try {
+      const data = await Astro.request.formData();
+      const lastname = data.get("lastname");
+      const firstname = data.get("firstname");
+      const email = data.get("email");
+      const institution = data.get("institution");
+      const formation = data.get("formation");
+      const other = data.get("other");
+      POST({
         lastname,
+        firstname,
         email,
         institution,
         formation,
         other
-      };
-      console.log("PAS D'ERREUR DONC ON ENVOIE LES DONNEES AU BACK", body);
-    }
+      })
+
     
   } catch (error) {
+    console.log("dans le catch")
     if (error instanceof Error) {
       console.error(error.message);
     }
@@ -164,30 +139,29 @@ const epitechFormations: Array<{
 ---
 
 <script>
-    const institutionSelect = document.getElementById("institution");
-    const formationField = document.getElementById("formation-field");
-    const otherField = document.getElementById("other-field");
-    const formationInput = document.getElementById("formation");
-    const otherInput = document.getElementById("other");
-    institutionSelect.addEventListener("change", () => {
+    const institutionSelect = document.getElementById("institution") as HTMLInputElement;
+    const formationField = document.getElementById("formation-field") as HTMLInputElement;
+    const otherField = document.getElementById("other-field") as HTMLInputElement;
+    const formationInput = document.getElementById("formation") as HTMLInputElement;
+    const otherInput = document.getElementById("other") as HTMLInputElement;
+    institutionSelect?.addEventListener("change", () => {
       formationField.style.display = institutionSelect.value === "epitech" ? "block" : "none";
       formationInput.required = institutionSelect.value === "epitech" ? true : false;
       otherField.style.display = institutionSelect.value === "other" ? "block" : "none";
       otherInput.required = institutionSelect.value === "other" ? true : false;
     });
-  </script>
+</script>
 <PageLayout meta={meta}>
 
   <form id="form" method="POST" class="subscribe-form">
-    <Input required label="Nom" name="lastname" error={errors.lastname}/>
-    <Input required label="Prénom" name="firstname" error={errors.firstname}/>
-    <Input required label="Email" type="email" name="email" error={errors.email}/>
+    <Input required label="Nom" name="lastname" />
+    <Input required label="Prénom" name="firstname" />
+    <Input required label="Email" type="email" name="email" />
     <Select
       required
       label="École ou Institution"
       name="institution"
       id="institution"
-      error={errors.institution}
       options={institutions}
       />
     <Select
@@ -195,7 +169,6 @@ const epitechFormations: Array<{
       name="formation"
       divId="formation-field"
       id="formation"
-      error={errors.formation}
       options={epitechFormations}
       style="display: none;"
       />
@@ -204,11 +177,10 @@ const epitechFormations: Array<{
       name="other"
       divId="other-field"
       id="other"
-      error={errors.other}
       style="display: none;"
     />
 
-    <button type="submit" class="subscribe-submit-btn">Je valide mon inscription</button>
+    <button type="submit" class="subscribe-submit-btn" >Je valide mon inscription</button>
   </form>
 
 </PageLayout>

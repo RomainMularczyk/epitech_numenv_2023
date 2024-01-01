@@ -6,8 +6,8 @@ const { divId, id, label, name, error, options, style, required } = Astro.props;
   <label for={name} class="subscribe-label">{label}</label>
   <select required={required} id={id} name={name} class="subscribe-input">
     {
-			options.map(({ value, label }) => (
-      <option value={value}>{label}</option>
+			options.map(({ value, label }: {value: string, label: string}) => (
+        <option value={value}>{label}</option>
 			))
 		}
   </select>
