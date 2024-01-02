@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.subscribe-form {
+    @apply max-w-md border
+    mx-auto p-8 mt-8
+  }
+
+  .subscribe-label {
+    @apply block text-blue text-sm font-semibold
+    mb-2
+  }
+
+  .subscribe-submit-btn {
+		@apply border-2 border-dashed border-blue text-blue
+    mt-4
+    py-2 px-1
+    font-semibold text-base
+    self-center
+    dark:text-green dark:border-green;
+	}
+
+  .subscribe-input {
+    @apply w-full border
+    p-2 
+  }
+
+  .subscribe-error {
+    @apply text-sm font-semibold;
+    color: red
+  }
+
+}

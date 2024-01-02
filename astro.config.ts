@@ -9,6 +9,7 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 // https://astro.build/config
 export default defineConfig({
+	output: 'server',
 	// ! Please remember to replace the following site property with your own domain
 	site: "https://RomainMularczyk.github.io/",
   base: "/epitech_numenv_2023",

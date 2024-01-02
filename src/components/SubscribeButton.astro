@@ -1,1 +1,10 @@
-<button class="subscribe-btn">S'inscrire</button>
+---
+const { link } = Astro.props;
+---
+
+<a
+  class="subscribe-btn"
+  href={link}
+>
+  S'inscrire
+</a>

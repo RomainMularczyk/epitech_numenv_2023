@@ -1,0 +1,186 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import Input from "@/components/subscribe/FormInput"
+import Select from "@/components/subscribe/FormSelect"
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const programEntries = await getCollection("program");
+  
+  return programEntries.map(entry => ({
+    params: { entry: entry.slug }, props: { entry }}
+    ));
+}
+
+const { entry } = Astro.props;
+const meta = {
+  title: entry.data.title,
+  description: entry.data.description,
+}
+  export const POST: APIRoute = (request) => {
+    console.log("request", request)
+
+    const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+      myHeaders.append('Access-Control-Allow-Origin', '*');
+  
+  
+      return fetch(`localhost:1323/subscribe/${meta.title}`, {
+          method: 'POST',
+          headers: myHeaders,
+          credentials: 'include',
+          body: JSON.stringify(request),
+          redirect: 'follow',
+      });
+  
+  }
+  
+  if (Astro.request.method === "POST") {
+    console.log("on envoie les données au back")
+    try {
+      const data = await Astro.request.formData();
+      const lastname = data.get("lastname");
+      const firstname = data.get("firstname");
+      const email = data.get("email");
+      const institution = data.get("institution");
+      const formation = data.get("formation");
+      const other = data.get("other");
+      POST({
+        lastname,
+        firstname,
+        email,
+        institution,
+        formation,
+        other
+      })
+
+    
+  } catch (error) {
+    console.log("dans le catch")
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+
+const institutions: Array<{
+	label: string;
+	value: string;
+}> = [
+	{
+		label: "Sélectionnez votre école ou institution",
+		value: "",
+	},
+	{
+		label: "Epitech",
+		value: "epitech",
+	},
+	{
+		label: "Epitech Digital School",
+		value: "epitech_digital",
+	},
+	{
+		label: "Web@cadémie",
+		value: "web_academie",
+	},
+  {
+    label: "e-artsup",
+    value: "e_artsup"
+	},
+  {
+    label: "ISEG",
+    value: "iseg"
+	},
+  {
+    label: "XP Esport & Gaming School",
+    value: "xp"
+	},
+  {
+    label: "Non-rattaché à une institution",
+    value: "independant"
+	},
+  {
+    label: "Autre institution",
+    value: "other"
+  }
+];
+
+const epitechFormations: Array<{
+	label: string;
+	value: string;
+}> = [
+  {
+    value:"",
+    label: "Sélectionnez votre formation Epitech"
+  },
+  {
+    value:"premsc",
+    label: "PreMsc"
+  },
+  {
+    value:"msc",
+    label: "Msc"
+  },
+  {
+    value:"pge",
+    label: "PGE"
+  },
+  {
+    value:"pedago",
+    label: "Equipe pédagogique"
+  },
+  {
+    value:"admin",
+    label: "Administration"
+  },
+];
+
+---
+
+<script>
+    const institutionSelect = document.getElementById("institution") as HTMLInputElement;
+    const formationField = document.getElementById("formation-field") as HTMLInputElement;
+    const otherField = document.getElementById("other-field") as HTMLInputElement;
+    const formationInput = document.getElementById("formation") as HTMLInputElement;
+    const otherInput = document.getElementById("other") as HTMLInputElement;
+    institutionSelect?.addEventListener("change", () => {
+      formationField.style.display = institutionSelect.value === "epitech" ? "block" : "none";
+      formationInput.required = institutionSelect.value === "epitech" ? true : false;
+      otherField.style.display = institutionSelect.value === "other" ? "block" : "none";
+      otherInput.required = institutionSelect.value === "other" ? true : false;
+    });
+</script>
+<PageLayout meta={meta}>
+
+  <form id="form" method="POST" class="subscribe-form">
+    <Input required label="Nom" name="lastname" />
+    <Input required label="Prénom" name="firstname" />
+    <Input required label="Email" type="email" name="email" />
+    <Select
+      required
+      label="École ou Institution"
+      name="institution"
+      id="institution"
+      options={institutions}
+      />
+    <Select
+      label="Formation Epitech"
+      name="formation"
+      divId="formation-field"
+      id="formation"
+      options={epitechFormations}
+      style="display: none;"
+      />
+    <Input
+      label="Institution, si autre"
+      name="other"
+      divId="other-field"
+      id="other"
+      style="display: none;"
+    />
+
+    <button type="submit" class="subscribe-submit-btn" >Je valide mon inscription</button>
+  </form>
+
+</PageLayout>
