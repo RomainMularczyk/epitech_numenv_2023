@@ -8,4 +8,9 @@
     font-semibold
     hover:text-black hover:dark:text-white;
   }
+
+  .link {
+    @apply hover:dark:text-green hover:text-blue
+    hover:font-bold underline underline-offset-2;
+  }
 }

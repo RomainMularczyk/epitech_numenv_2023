@@ -28,4 +28,15 @@ const program = defineCollection({
   })
 });
 
-export const collections = { program };
+const books = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    authors: z.array(z.string()),
+    date: z.number(),
+    place: z.string(),
+    publisher: z.string(),
+  })
+})
+
+export const collections = { books, program };
