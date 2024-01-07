@@ -1,0 +1,25 @@
+---
+import PageLayout from "@/layouts/Base";
+const ENVNUM_EMAIL = import.meta.env.PUBLIC_ENVNUM_EMAIL;
+
+const meta = {
+  title: "Données personnelles",
+  description: "Information concernant vos données personnelles",
+}
+---
+
+<PageLayout {meta} >
+	<section>
+		<h1 class="title mb-6">Vos données personnelles</h1>
+      <p class="pb-4">
+        Nous ne collectons aucune données à caractère personnelles autres que celles
+        transmises lors de votre inscription aux différentes sessions. Celles-ci sont
+        collectées uniquement dans le but de prendre en charge votre inscription.
+      </p>
+      <p class="pb-4">
+        Pour consulter vos données personnelles ou demander leur suppression,
+        vous pouvez adresser un mail à
+        <a class="email-contact" href={`mailto:${ENVNUM_EMAIL}`}>{ENVNUM_EMAIL}</a>
+      </p>
+	</section>
+</PageLayout>
