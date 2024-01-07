@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
+		"prod": "node dist/server/entry.mjs",
 		"build": "astro build",
 		"postbuild": "pagefind --site dist",
 		"preview": "astro preview",
@@ -13,7 +14,7 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^1.1.1",
-		"@astrojs/node": "^7.0.4",
+		"@astrojs/node": "^6.0.2",
 		"@astrojs/prefetch": "^0.4.1",
 		"@astrojs/rss": "^3.0.0",
 		"@astrojs/sitemap": "^3.0.1",
