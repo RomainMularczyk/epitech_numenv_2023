@@ -4,6 +4,7 @@ import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
+import node from "@astrojs/node";
 import remarkUnwrapImages from "remark-unwrap-images";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
@@ -25,6 +26,9 @@ export default defineConfig({
       wrap: true
     }
   },
+  adapter: node({
+    mode: "standalone",
+  }),
   integrations: [mdx({}), tailwind({
     applyBaseStyles: false
   }), sitemap(), prefetch()],
