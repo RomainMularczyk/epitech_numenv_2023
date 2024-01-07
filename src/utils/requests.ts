@@ -128,7 +128,7 @@ const handleSubscriberRegistrationResponses = async (response: Response) => {
         }
       )
     } else {
-      const responsedata = {
+      const errMsg = {
         message: "Unknown error happened when trying to register the subscriber.",
       };
       return new Response(
