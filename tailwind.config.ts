@@ -30,6 +30,7 @@ export default {
         white: "#F3F2F2",
         blue: "#0766AD",
         green: "#C5E898",
+        red: "#EF4040",
 			},
 			fontFamily: {
 				// Add any custom fonts here
