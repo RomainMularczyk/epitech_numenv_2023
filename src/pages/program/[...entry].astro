@@ -9,7 +9,11 @@ export const prerender = true;
 export async function getStaticPaths() {
   const programEntries = await getCollection("program");
 
-  return programEntries.map(entry => ({
+  const programFiltered = programEntries.filter((entry) => {
+    return entry.data.draft === false
+  });
+
+  return programFiltered.map(entry => ({
     params: { entry: entry.slug }, props: { entry }}
   ));
 }
