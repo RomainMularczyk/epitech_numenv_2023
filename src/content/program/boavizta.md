@@ -6,6 +6,7 @@ time: 14h-20h
 type: Hackathon
 place: Epitech Lyon
 discord: hackathon
+draft: true
 description: Ce hackathon vise à introduire aux problématiques du numérique responsable en utilisant (puis en contribuant ?) les outils open-source de Boavizta. Il permettra aux participant.e.s, tout en élaborant des solutions techniques concrètes, de construire une vision sur l'état de la connaissance sur les impacts environnementaux des technologies numériques.
 ---
 

@@ -24,6 +24,7 @@ const program = defineCollection({
     ]),
     place: z.string(),
     description: z.string(),
+    draft: z.boolean(),
   })
 });
 

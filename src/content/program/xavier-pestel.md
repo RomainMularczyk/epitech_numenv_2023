@@ -6,6 +6,7 @@ time: 14h-16h
 type: Conférence
 place: Amphithéâtre ISEG
 discord: xp-05-06-2024
+draft: true
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum eros et venenatis accumsan. Phasellus neque magna, laoreet eu lacus at, rutrum consectetur enim. Nullam porta justo eget massa ornare elementum. Nullam volutpat sed mi a condimentum. Nam gravida interdum ante ut placerat. Donec at enim ut nunc condimentum tristique ac eu turpis.
 ---
 

@@ -7,12 +7,13 @@ import prefetch from "@astrojs/prefetch";
 import node from "@astrojs/node";
 import remarkUnwrapImages from "remark-unwrap-images";
 import { remarkReadingTime } from "./src/utils/remark-reading-time";
+//const ENVNUM_CLIENT_HOST=import.meta.env.PUBLIC_ENVNUM_CLIENT_HOST;
 
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
   // ! Please remember to replace the following site property with your own domain
-  site: "https://RomainMularczyk.github.io/",
+  site: "https://envnum.fr",
   base: "/",
   markdown: {
     remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
