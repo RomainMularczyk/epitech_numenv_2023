@@ -1,0 +1,16 @@
+---
+import RedirectButton from "@/components/subscribe/redirects/RedirectButton";
+import Title from "@/components/subscribe/FormTitle";
+import { lowerCaseFirstLetters } from "../../../utils/string-formatting";
+
+const { data } = Astro.props;
+const speaker = lowerCaseFirstLetters(data.speaker);
+---
+
+<div class="pt-8">
+  <Title {data} />
+  <p class="mb-10 pt-10">
+    Une erreur est survenue lors de la récupération des données serveur.
+  </p>
+  <RedirectButton link={`/subscribe/${speaker}`} text="Rééssayer" />
+</div>

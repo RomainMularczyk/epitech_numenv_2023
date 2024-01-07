@@ -1,0 +1,70 @@
+---
+import Input from "@/components/subscribe/FormInput";
+import Submit from "@/components/subscribe/FormSubmit";
+import Select from "@/components/subscribe/FormSelect";
+import { INSTITUTIONS, EPITECH_FORMATIONS } from "../../types/constants.ts";
+const ENVNUM_API_HOST = import.meta.env.PUBLIC_ENVNUM_API_HOST
+
+const { data } = Astro.props;
+---
+<script src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.js"></script>
+
+<script>
+  const institutionSelect = document.getElementById("institution") as HTMLInputElement;
+  const formationField = document.getElementById("formation-field") as HTMLInputElement;
+  const otherField = document.getElementById("other-field") as HTMLInputElement;
+  const formationInput = document.getElementById("formation") as HTMLInputElement;
+  const otherInput = document.getElementById("other") as HTMLInputElement;
+  institutionSelect?.addEventListener("change", () => {
+    formationField.style.display = institutionSelect.value === "epitech" ? "block" : "none";
+    formationInput.required = institutionSelect.value === "epitech" ? true : false;
+    otherField.style.display = institutionSelect.value === "other" ? "block" : "none";
+    otherInput.required = institutionSelect.value === "other" ? true : false;
+  });
+</script>
+
+<script>
+  import { removeTrailingSlash } from "../../utils/string-formatting";
+  import { getAltchaChallenge, appendAltchaWidget } from "../../utils/altcha";
+  import { registerSubscriber } from "../../utils/requests";
+
+  const form = document.getElementById("form");
+  const submitBtn = document.getElementById("submit-btn");
+
+  const challenge = await getAltchaChallenge();
+  appendAltchaWidget(submitBtn, challenge);
+  registerSubscriber(challenge);
+</script>
+
+<form
+  id="form"
+  method="POST"
+  class="subscribe-form"
+>
+  <Input required label="Nom" name="lastname" />
+  <Input required label="Prénom" name="firstname" />
+  <Input required label="Email" type="email" name="email" />
+  <Select
+    required
+    label="École ou Institution"
+    name="institution"
+    id="institution"
+    options={INSTITUTIONS}
+    />
+  <Select
+    label="Formation Epitech"
+    name="formation"
+    divId="formation-field"
+    id="formation"
+    options={EPITECH_FORMATIONS}
+    style="display: none;"
+    />
+  <Input
+    label="Institution, si autre"
+    name="other"
+    divId="other-field"
+    id="other"
+    style="display: none;"
+  />
+  <Submit />
+</form>

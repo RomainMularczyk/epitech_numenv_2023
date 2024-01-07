@@ -2,6 +2,7 @@
 @import "./subscribe/subscribe.css";
 @import "./program/programDetails.css";
 @import "./menu/headerMenu.css";
+@import "./contacts/contacts.css";
 
 @tailwind base;
 @tailwind components;
@@ -27,6 +28,10 @@
 		--theme-accent: 159deg 64% 45%;
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
+
+    --altcha-color-base: "#363636";
+    --altcha-color-border: "#C5E898";
+    --altcha-color-footer-bg: "#363636";
 	}
 
 	html {
@@ -34,6 +39,8 @@
 	}
 
 	html body {
-		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
+		@apply mx-auto flex min-h-screen max-w-3xl
+    flex-col bg-bgColor px-8 pt-16 font-mono
+    text-sm font-normal text-textColor antialiased;
 	}
 }

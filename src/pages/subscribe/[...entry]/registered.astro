@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import AlreadyRegistered from "@/components/subscribe/redirects/AlreadyRegistered";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const programEntries = await getCollection("program");
+
+  return programEntries.map(entry => ({
+    params: { entry: entry.slug }, props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const meta = {
+  title: "Inscription déjà effectuée"
+  data: entry.data,
+  description: "Inscription déjà effectuée à la session ${entry.data.title}",
+}
+---
+
+<PageLayout meta={meta} >
+  <AlreadyRegistered data={meta.data} />
+</PageLayout>

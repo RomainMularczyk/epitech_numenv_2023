@@ -9,50 +9,48 @@ import { remarkReadingTime } from "./src/utils/remark-reading-time";
 
 // https://astro.build/config
 export default defineConfig({
-	output: 'server',
-	// ! Please remember to replace the following site property with your own domain
-	site: "https://RomainMularczyk.github.io/",
-  base: "/epitech_numenv_2023",
-	markdown: {
-		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
-		remarkRehype: { footnoteLabelProperties: { className: [""] } },
-		shikiConfig: {
-			theme: "dracula",
-			wrap: true,
-		},
-	},
-	integrations: [
-		mdx({}),
-		tailwind({
-			applyBaseStyles: false,
-		}),
-		sitemap(),
-		prefetch(),
-	],
-	image: {
-		domains: ["webmention.io"],
-	},
-	vite: {
-		plugins: [rawFonts([".ttf"])],
-		optimizeDeps: {
-			exclude: ["@resvg/resvg-js"],
-		},
-	},
+  output: 'server',
+  // ! Please remember to replace the following site property with your own domain
+  site: "https://RomainMularczyk.github.io/",
+  base: "/",
+  markdown: {
+    remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
+    remarkRehype: {
+      footnoteLabelProperties: {
+        className: [""]
+      }
+    },
+    shikiConfig: {
+      theme: "dracula",
+      wrap: true
+    }
+  },
+  integrations: [mdx({}), tailwind({
+    applyBaseStyles: false
+  }), sitemap(), prefetch()],
+  image: {
+    domains: ["webmention.io"]
+  },
+  vite: {
+    plugins: [rawFonts([".ttf"])],
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"]
+    }
+  }
 });
-
 function rawFonts(ext: Array<string>) {
-	return {
-		name: "vite-plugin-raw-fonts",
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore:next-line
-		transform(_, id) {
-			if (ext.some((e) => id.endsWith(e))) {
-				const buffer = fs.readFileSync(id);
-				return {
-					code: `export default ${JSON.stringify(buffer)}`,
-					map: null,
-				};
-			}
-		},
-	};
+  return {
+    name: "vite-plugin-raw-fonts",
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore:next-line
+    transform(_, id) {
+      if (ext.some(e => id.endsWith(e))) {
+        const buffer = fs.readFileSync(id);
+        return {
+          code: `export default ${JSON.stringify(buffer)}`,
+          map: null
+        };
+      }
+    }
+  };
 }

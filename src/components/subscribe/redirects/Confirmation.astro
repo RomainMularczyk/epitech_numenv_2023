@@ -1,0 +1,25 @@
+---
+import RedirectButton from "@/components/subscribe/redirects/RedirectButton";
+import Title from "@/components/subscribe/FormTitle";
+import EmailQuestions from "@/components/contacts/EmailQuestions";
+
+const { data } = Astro.props;
+---
+<div class="pt-8">
+  <Title {data} />
+  <section class="pt-10 mb-10">
+    <p class="py-2">
+      Votre demande d'inscription a été <b>correctement enregistrée</b>.
+    </p>
+    <p class="py-2">
+      Pour finaliser votre inscription, veuillez <b>consulter le mail qui vous a été envoyé</b>
+      et suivre les indications détaillées.
+    </p>
+    <p class="py-2">
+      Lors de l'événement, vous pourrez rejoindre le canal Discord dédié pour échanger
+      avec les autres participant.e.s et poser vos questions aux intervenant.e.s.
+    </p>
+    <EmailQuestions />
+  </section>
+  <RedirectButton link="/program" text="Voir les autres sessions" />
+</div>

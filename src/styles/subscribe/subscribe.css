@@ -10,6 +10,7 @@
 
   .subscribe-label {
     @apply block text-blue text-sm font-semibold
+    dark:text-green
     mb-2
   }
 
@@ -19,12 +20,14 @@
     py-2 px-1
     font-semibold text-base
     self-center
+    hover:bg-blue hover:dark:bg-green
+    hover:text-white hover:dark:text-black
     dark:text-green dark:border-green;
 	}
 
   .subscribe-input {
     @apply w-full border
-    p-2 
+    p-2
   }
 
   .subscribe-error {
@@ -32,4 +35,34 @@
     color: red
   }
 
+  .subscribe-title {
+    @apply text-blue dark:text-green;
+  }
+
+  .subscribe-title-speaker {
+    @apply text-xl text-black dark:text-white;
+  }
+
+  .subscribe-title-name {
+    @apply text-lg text-black dark:text-white;
+  }
+
+  .subscribe-title-info {
+    @apply pt-4 font-semibold;
+  }
+
+  .subscribe-error-box {
+    @apply flex flex-row justify-center p-4
+    box-border border-2 border-dashed
+    border-red w-fit text-center;
+  }
+
+  .subscribe-redirect-btn {
+    @apply border-2 border-dashed border-blue text-blue
+    py-2 px-1
+    font-semibold text-base
+    self-center
+    dark:text-green dark:border-green
+    hover-btn;
+  }
 }

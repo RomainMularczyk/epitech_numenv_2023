@@ -1,0 +1,15 @@
+---
+import { getFormattedDate } from "../../utils/date";
+
+const { data } = Astro.props;
+---
+
+<div class="subscribe-title">
+<h1 class="subscribe-title-speaker">{data.speaker}</h1>
+<h2 class="subscribe-title-name">{data.title}</h2>
+<div class="subscribe-title-info">
+  <span>{getFormattedDate(data.date)}</span>
+  <span>{data.time}</span>
+  <span>{data.place}</span>
+</div>
+</div>

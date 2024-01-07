@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .email-contact {
+    @apply text-blue dark:text-green
+    font-semibold
+    hover:text-black hover:dark:text-white;
+  }
+}

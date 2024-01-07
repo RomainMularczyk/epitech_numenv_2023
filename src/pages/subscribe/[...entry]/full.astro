@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import SessionFull from "@/components/subscribe/redirects/SessionFull";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const programEntries = await getCollection("program");
+
+  return programEntries.map(entry => ({
+    params: { entry: entry.slug }, props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const meta = {
+  title: "Confirmation d'inscription",
+  data: entry.data,
+  description: `Confirmation d'inscription à la session ${entry.data.title}`,
+}
+---
+
+<PageLayout meta={meta} >
+  <SessionFull data={meta.data} />
+</PageLayout>
+

@@ -23,16 +23,16 @@ const slug = speaker.replace(" ", "-").toLowerCase();
       {getFormattedDate(date)}
     </span>
     <div class="program-sep"/>
-    <span class="program-time text-red">{time}</span>
+    <span class="program-time">{time}</span>
   </div>
   <div class="program-place-type">
     <span class="program-place">{place}</span>
     <div class="program-sep" />
     <span class="program-type">{type}</span>
   </div>
-  <p class="program-description">{description}</p>
+  <p class="program-description pb-4">{description}</p>
   <div class="flex flex-row gap-2">
-    <SubscribeButton link={"/subscribe/" + slug} />
+    <SubscribeButton link={Astro.url.origin + "/subscribe/" + slug} />
     <DetailsButton link={Astro.url.pathname + slug} />
   </div>
   <div class="program-sep-section" />
