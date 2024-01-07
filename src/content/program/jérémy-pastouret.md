@@ -6,5 +6,6 @@ time: 10h-12h
 type: Atelier
 place: Salle 404
 discord: jp-04-05-2024
+draft: true
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum eros et venenatis accumsan. Phasellus neque magna, laoreet eu lacus at, rutrum consectetur enim. Nullam porta justo eget massa ornare elementum. Nullam volutpat sed mi a condimentum. Nam gravida interdum ante ut placerat. Donec at enim ut nunc condimentum tristique ac eu turpis.
 ---
