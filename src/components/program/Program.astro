@@ -1,5 +1,6 @@
 ---
 import ProgramEntry from "@/components/program/ProgramEntry";
+import EmailQuestions from "@/components/contacts/EmailQuestions";
 
 const programEntries = await Astro.glob(
   "../../content/program/*.md"
@@ -8,20 +9,42 @@ const programEntries = await Astro.glob(
 const programEntriesSorted = programEntries.sort((a, b) => {
   return new Date(a.frontmatter.date) - new Date(b.frontmatter.date)
 });
+
+const programFiltered = programEntriesSorted.filter((entry) => {
+  return entry.frontmatter.draft === false
+});
 ---
 
-<ul>
-  {
-    programEntriesSorted.map(programEntry => (
-      <ProgramEntry
-        title={programEntry.frontmatter.title}
-        speaker={programEntry.frontmatter.speaker}
-        date={programEntry.frontmatter.date}
-        time={programEntry.frontmatter.time}
-        type={programEntry.frontmatter.type}
-        place={programEntry.frontmatter.place}
-        description={programEntry.frontmatter.description}
-      />
-    ))
-  }
-</ul>
+<div>
+  <p class="pb-4">
+    Le programme est mis à jour régulièrement. Vous pouvez aussi utiliser la commande
+    <span class="program-code">/sessions</span>
+    sur le serveur
+    <span class="font-semibold">Discord .env&#123;2024&#125;</span>
+    pour consulter le programme à jour.
+  </p>
+  <p class="py-2">
+    Pour <span class="font-semibold">rejoindre le serveur Discord</span>, merci de vous
+    <span class="font-semibold">inscrire au préalable</span>
+    et de suivre les indications dans le mail de confirmation d'inscription.
+  </p>
+  <EmailQuestions />
+  <div class="flex flex-row justify-center">
+    <h1 class="program-header">Programme</h1>
+  </div>
+  <ul>
+    {
+      programFiltered.map(programEntry => (
+        <ProgramEntry
+          title={programEntry.frontmatter.title}
+          speaker={programEntry.frontmatter.speaker}
+          date={programEntry.frontmatter.date}
+          time={programEntry.frontmatter.time}
+          type={programEntry.frontmatter.type}
+          place={programEntry.frontmatter.place}
+          description={programEntry.frontmatter.description}
+        />
+      ))
+    }
+  </ul>
+</div>
