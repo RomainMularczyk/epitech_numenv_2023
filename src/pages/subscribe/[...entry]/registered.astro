@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const meta = {
-  title: "Inscription déjà effectuée"
+  title: "Inscription déjà effectuée",
   data: entry.data,
   description: "Inscription déjà effectuée à la session ${entry.data.title}",
 }
