@@ -1,7 +1,7 @@
 {
-	"name": "Astro Theme Cactus Demo",
-	"short_name": "Astro_Cactus",
-	"description": "Starter blog site for Astro",
+	"name": ".env{2024}",
+	"short_name": "envnum",
+	"description": "Site web d'inscription pour le cycle .env{2024}",
 	"icons": [
 		{
 			"src": "/192x192.png",
