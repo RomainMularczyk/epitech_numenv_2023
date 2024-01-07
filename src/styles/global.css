@@ -4,6 +4,7 @@
 @import "./menu/headerMenu.css";
 @import "./menu/footerMenu.css";
 @import "./contacts/contacts.css";
+@import "./resources/resources.css";
 
 @tailwind base;
 @tailwind components;
