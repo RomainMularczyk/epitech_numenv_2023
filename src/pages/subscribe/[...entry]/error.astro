@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import FormTitle from "@/components/subscribe/FormTitle";
+import ServerError from "@/components/subscribe/redirects/ServerError";
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const programEntries = await getCollection("program");
+
+  return programEntries.map(entry => ({
+    params: { entry: entry.slug }, props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const meta = {
+  title: "Erreur d'inscription",
+  data: entry.data,
+  description: `Erreur lors de l'inscription à la ${entry.data.title}`,
+}
+---
+
+<PageLayout meta={meta} >
+  <ServerError data={meta.data} />
+</PageLayout>
