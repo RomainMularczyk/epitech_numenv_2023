@@ -4,11 +4,15 @@ import ProgramEntry from "@/components/program/ProgramEntry";
 const programEntries = await Astro.glob(
   "../../content/program/*.md"
 );
+
+const programEntriesSorted = programEntries.sort((a, b) => {
+  return new Date(a.frontmatter.date) - new Date(b.frontmatter.date)
+});
 ---
 
 <ul>
   {
-    programEntries.map(programEntry => (
+    programEntriesSorted.map(programEntry => (
       <ProgramEntry
         title={programEntry.frontmatter.title}
         speaker={programEntry.frontmatter.speaker}

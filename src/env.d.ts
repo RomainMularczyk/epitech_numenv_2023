@@ -12,6 +12,7 @@ interface ImportMetaEnv {
 	readonly WEBMENTION_API_KEY: string;
   readonly PUBLIC_ENVNUM_API_HOST: string;
   readonly PUBLIC_ENVNUM_EMAIL: string;
+  readonly PUBLIC_ENVNUM_CLIENT_HOST: string;
 }
 
 interface ImportMeta {
