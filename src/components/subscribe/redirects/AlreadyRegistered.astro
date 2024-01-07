@@ -1,0 +1,15 @@
+---
+import RedirectButton from "@/components/subscribe/redirects/RedirectButton";
+import Title from "@/components/subscribe/FormTitle";
+
+const { data } = Astro.props;
+---
+
+<div class="pt-8">
+  <Title {data} />
+  <p class="mb-10 pt-10">
+    Vous êtes déjà inscrit.e à cette session. Vous pouvez consulter les autres
+    sessions disponibles.
+  </p>
+  <RedirectButton link="/program" text="Voir les autres sessions" />
+</div>
