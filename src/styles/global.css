@@ -2,6 +2,7 @@
 @import "./subscribe/subscribe.css";
 @import "./program/programDetails.css";
 @import "./menu/headerMenu.css";
+@import "./menu/footerMenu.css";
 @import "./contacts/contacts.css";
 
 @tailwind base;
