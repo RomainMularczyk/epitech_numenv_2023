@@ -1,0 +1,20 @@
+---
+import PageLayout from "@/layouts/Base";
+const ENVNUM_EMAIL = import.meta.env.PUBLIC_ENVNUM_EMAIL;
+
+const meta = {
+  title: "Données personnelles",
+  description: "Information concernant vos données personnelles",
+}
+---
+
+<PageLayout {meta} >
+	<section>
+		<h1 class="title mb-6">Vos données personnelles</h1>
+      <p class="pb-4">
+        Si vous voulez contribuer à notre projet, vous pouvez nous adresser un mail
+        à <a class="email-contact" href={`mailto:${ENVNUM_EMAIL}`}>{ENVNUM_EMAIL}</a>
+        ou prendre directement contact avec les organisateurs via le serveur Discord.
+      </p>
+	</section>
+</PageLayout>
