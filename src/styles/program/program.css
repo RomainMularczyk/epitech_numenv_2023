@@ -26,6 +26,11 @@
     hover:bg-blue hover:text-white;
   }
 
+  .program-header {
+      @apply text-center text-3xl
+      font-bold pt-8;
+    }
+
   .program-entry {
     @apply flex flex-col justify-center
     pt-8;
@@ -67,5 +72,12 @@
     @apply program-sep
     mt-10 mx-16
     border-black dark:border-white;
+  }
+
+  .program-code {
+    @apply bg-blue dark:bg-green
+    font-semibold
+    py-0.5 px-1 rounded-md
+    text-white dark:text-black;
   }
 }
