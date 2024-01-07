@@ -1,0 +1,15 @@
+---
+import BookEntry from "@/components/books/BookEntry";
+
+const books = await Astro.glob("../../content/books/*.md");
+---
+
+<h2 class="subtitle">Ouvrages</h2>
+<ul>
+  {
+    books.map((book) => (
+      <BookEntry metadata={book} />
+    ))
+  }
+</ul>
+

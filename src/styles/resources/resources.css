@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .resources-title {
+    @apply text-2xl font-bold;
+  }
+
+  .subtitle {
+    @apply title text-xl py-4;
+  }
+
+  .resource-entry {
+    @apply py-2;
+  }
+
+  .book-entry {
+    @apply pt-2;
+  }
+
+  .book-title {
+    @apply italic;
+  }
+}

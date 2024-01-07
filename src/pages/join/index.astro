@@ -1,0 +1,28 @@
+---
+import PageLayout from "@/layouts/Base";
+const ENVNUM_EMAIL = import.meta.env.PUBLIC_ENVNUM_EMAIL;
+
+const meta = {
+  title: "Données personnelles",
+  description: "Information concernant vos données personnelles",
+}
+---
+
+<PageLayout {meta} >
+	<section>
+		<h1 class="title pb-6">Contribuer</h1>
+    <p class="pb-4">
+      Si vous voulez contribuer à notre projet, vous pouvez nous
+      <span class="font-semibold">adresser un mail</span>
+      à <a class="email-contact" href={`mailto:${ENVNUM_EMAIL}`}>{ENVNUM_EMAIL}</a>
+      ou prendre directement contact avec les organisateurs
+      <span class="font-semibold">via le serveur Discord</span>.
+    </p>
+    <h1 class="title py-6">Crédits</h1>
+    <p>
+      Ce site web a été construit avec <a class="link" href="https://astro.build/">Astro</a>
+      sur la base du template
+      <a class="link" href="https://astro-cactus.chriswilliams.dev/">Astro Cactus</a>. Si vous
+    </p>
+	</section>
+</PageLayout>

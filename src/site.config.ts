@@ -6,7 +6,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
 	title: ".env{2024}",
 	// Meta property used as the default description meta property
-	description: "Présentation du cycle .env{2024}",
+	description: "Cycle .env{2024}",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "fr-FR",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -35,10 +35,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Programme",
 		path: `${siteConfig.proxyPath}/program/`,
 	},
-	//{
-	//	title: "Ressources",
-	//	path: `${siteConfig.proxyPath}/resources/`,
-	//},
+	{
+		title: "Ressources",
+		path: `${siteConfig.proxyPath}/resources/`,
+	},
   //{
   //  title: "Introspection",
   //  path: `${siteConfig.proxyPath}/introspect/`,
