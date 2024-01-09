@@ -7,12 +7,17 @@ const { metadata } = Astro.props;
 <li class="book-entry">
   <ul class="book-authors">
     {
-      metadata.frontmatter.authors.map((author) => (
-        <AuthorEntry {author} />
-      ))
+      metadata.frontmatter.authors.map((author, index) => {
+        if (index === metadata.frontmatter.authors.length - 1) {
+          return <AuthorEntry author={`${author} :`} />
+        } else {
+          return <AuthorEntry author={`${author}, `} />
+        }
+      }
+      )
     }
   </ul>
-  <span class="book-title">- {metadata.frontmatter.title}</span>
+  <span class="book-title">- {metadata.frontmatter.title},</span>
   <span class="book-place">{metadata.frontmatter.place},</span>
   <span class="book-publisher">{metadata.frontmatter.publisher},</span>
   <span class="book-date">{metadata.frontmatter.date}.</span>
