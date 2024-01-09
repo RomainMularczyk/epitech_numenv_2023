@@ -12,8 +12,6 @@ description: A travers cette présentation qui inaugurera le cycle .env{2024}, l
 
 Emmanuelle Frenoux est enseignante-chercheuse en informatique à l'université Paris-Saclay et membre du GDS (Groupement de service) EcoInfo.
 
-<br>
-
 **Informations de connexion :**
-- Zoom
-- Link
+
+Cette séance se déroulera sur Zoom. Le lien de connexion vous sera envoyé le jour de l'événement via le canal dédié du serveur Discord .env&#123;2024&#125;.
