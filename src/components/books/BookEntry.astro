@@ -9,7 +9,7 @@ const { metadata } = Astro.props;
     {
       metadata.frontmatter.authors.map((author, index) => {
         if (index === metadata.frontmatter.authors.length - 1) {
-          return <AuthorEntry author={`${author} :`} />
+          return <AuthorEntry author={`${author}. `} />
         } else {
           return <AuthorEntry author={`${author}, `} />
         }
