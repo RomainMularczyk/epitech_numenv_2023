@@ -32,7 +32,11 @@ const slug = speaker.replace(" ", "-").toLowerCase();
   </div>
   <p class="program-description pb-4">{description}</p>
   <div class="flex flex-row gap-2">
-    <SubscribeButton link={Astro.url.origin + "/subscribe/" + slug} />
+    {
+      speaker === "IA Pau" ?
+      <SubscribeButton link="https://8e21s.r.sp1-brevo.net/mk/cl/f/sh/1f8JIKXwHGYowyt0keTejBr1Lo/RzQI1sC9ULo4" />
+      : <SubscribeButton link={Astro.url.origin + "/subscribe/" + slug} />
+    }
     <DetailsButton link={Astro.url.pathname + slug} />
   </div>
   <div class="program-sep-section" />

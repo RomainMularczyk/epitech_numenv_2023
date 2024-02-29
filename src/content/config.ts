@@ -16,11 +16,12 @@ const program = defineCollection({
     discord: z.enum([
       "ef-01-02-2024",
       "cm-29-04-2024",
+      "pg-08-03-2024",
       "sc-02-05-2024",
       "jp-04-05-2024",
       "xp-05-06-2024",
       "hackathon",
-      "data-challenge",
+      "data-battle",
     ]),
     place: z.string(),
     description: z.string(),
