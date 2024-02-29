@@ -1,11 +1,13 @@
 ---
 title: Eco-conception
 speaker: Jérémy Pastouret
-date: 2023-01-12T00:00:00.000Z
+date: 2024-04-15T00:00:00.000Z
 time: 10h-12h
 type: Atelier
 place: Salle 404
 discord: jp-04-05-2024
-draft: true
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vestibulum eros et venenatis accumsan. Phasellus neque magna, laoreet eu lacus at, rutrum consectetur enim. Nullam porta justo eget massa ornare elementum. Nullam volutpat sed mi a condimentum. Nam gravida interdum ante ut placerat. Donec at enim ut nunc condimentum tristique ac eu turpis.
+draft: false
+description: Et si l'eco-conception était l'avenir de notre profession ? Face à la multiplication des concurrents dans notre métier (IA, solutions no-code...) l'éco-conception nous permet de concevoir différemment nos services numériques, d'intégrer davantage de réflexion, nous amène à sortir de nos outils et librairies toutes faites, nous permet de reprendre le contrôle sur nos systèmes. Plus qu'une ligne sur un CV, c'est un nouveau sens à notre métier. Venez découvrir pourquoi l'eco-conception est incontournable, avec ses avantages comme ses inconvénients.
 ---
+
+Jérémy Pastouret est développeur web depuis plus de 10 ans. Il a co-fondé <a href="https://les-enovateurs.com/" class="link">Les Enovateurs</a>, média reconnu d'intérêt politique et général dédié entièrement au numérique responsable. Ce service de presse en ligne vise à sensibiliser le grand public aux enjeux sociétaux et environnementaux du numérique, et propose des actions pour changer nos habitudes en vue de réduire notre impact. Il a co-écrit le livre <a href="https://www.editions-eni.fr/supports-de-cours/livre/comment-reduire-l-impact-de-nos-pratiques-numeriques-les-cles-pour-agir-9782409040108" class="link"> "Comment réduire l'impact de nos pratiques numérique"</a>.
