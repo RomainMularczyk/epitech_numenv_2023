@@ -14,8 +14,8 @@ export async function getStaticPaths() {
   });
 
   return programFiltered.map(entry => ({
-    params: { entry: entry.slug }, props: { entry }}
-  ));
+    params: { entry: entry.slug }, props: { entry }
+  }));
 }
 
 const { entry } = Astro.props;
@@ -51,5 +51,9 @@ const slug = meta.speaker.replace(" ", "-").toLowerCase();
   <div id="program-information" class="pb-4">
     <Content />
   </div>
-  <SubscribeButton link={Astro.url.origin + "/subscribe/" + slug} />
+  {
+    entry.slug === "ia-pau" ?
+    <SubscribeButton link="https://8e21s.r.sp1-brevo.net/mk/cl/f/sh/1f8JIKXwHGYowyt0keTejBr1Lo/RzQI1sC9ULo4" />
+    : <SubscribeButton link={Astro.url.origin + "/subscribe/" + slug} />
+  }
 </PageLayout>
