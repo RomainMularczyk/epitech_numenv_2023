@@ -4,7 +4,7 @@ title: Data Battle - Gagner avec une solution environnementale responsable
 date: 2024-03-08T00:00:00.000Z
 time: 18h-20h
 type: Visioconférence
-place: Zoom
+place: En ligne
 discord: pg-08-03-2024
 draft: false
 description: Dans ce séminaire, nous introduirons une méthodologie pour évaluer et améliorer l'impact environnemental d'un projet informatique. Nous verrons les principes généraux, à savoir les principaux critères telles que le bilan énergétique, carbone, l'empreinte en eau, la dépletion de ressources abiotiques, ainsi que les outils et méthodologies d'analyse en Cycle de vie pour quantifier ces critères, et pourquoi les efforts de diminution sont limitées par les effets rebonds.
