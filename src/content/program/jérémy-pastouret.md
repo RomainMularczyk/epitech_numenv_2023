@@ -2,9 +2,9 @@
 title: Devenez éco-concepteur.rice.s et atteignez le sommet du développement
 speaker: Jérémy Pastouret
 date: 2024-04-15T00:00:00.000Z
-time: 10h-12h
+time: 11h-12h30
 type: Atelier
-place: Salle 404
+place: Epitech Lyon
 discord: jp-04-05-2024
 draft: false
 description: Et si l'eco-conception était l'avenir de notre profession ? Face à la multiplication des concurrents dans notre métier (IA, solutions no-code...) l'éco-conception nous permet de concevoir différemment nos services numériques, d'intégrer davantage de réflexion, nous amène à sortir de nos outils et librairies toutes faites, nous permet de reprendre le contrôle sur nos systèmes. Plus qu'une ligne sur un CV, c'est un nouveau sens à notre métier. Venez découvrir pourquoi l'eco-conception est incontournable, avec ses avantages comme ses inconvénients.
