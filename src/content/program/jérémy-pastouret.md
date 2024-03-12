@@ -1,5 +1,5 @@
 ---
-title: Eco-conception
+title: Devenez éco-concepteur.rice.s et atteignez le sommet du développement
 speaker: Jérémy Pastouret
 date: 2024-04-15T00:00:00.000Z
 time: 10h-12h
